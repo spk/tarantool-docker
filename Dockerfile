@@ -8,10 +8,10 @@ ENV DEBCONF_NOWARNINGS yes
 
 RUN groupadd -r tarantool && useradd -r -g tarantool tarantool
 
-RUN apt-get update && apt-get -y upgrade && rm -rf /var/lib/apt/lists/*
+RUN apt-get -q update && apt-get -y upgrade
 
-ENV TARANTOOL_VERSION 1.6.4-472-g53b61a8
-ENV TARANTOOL_SHA1 a62f528e408ea681635338cfd2c24b5dafa89eb7
+ENV TARANTOOL_VERSION 1.6.7-460-g7d4d3e0
+ENV TARANTOOL_SHA1 b639bbdf0d0596713589ba9e11654f3b0f4e269e
 
 ADD http://tarantool.org/dist/master/tarantool-${TARANTOOL_VERSION}-src.tar.gz /tmp/tarantool.tar.gz
 
